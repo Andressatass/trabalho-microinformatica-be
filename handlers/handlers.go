@@ -79,6 +79,13 @@ func HandleCreateUser(w http.ResponseWriter, r *http.Request, repo repository.Mo
 	w.Write(byte)
 }
 
+func Ping(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+
+	w.Write([]byte("pong"))
+}
+
 func WriteErrorResponse(w http.ResponseWriter, err error, statusCode int) {
 	errorResponse := ErrorResponse{
 		Message: err.Error(),
