@@ -8,14 +8,14 @@ import (
 )
 
 type MockUserRepository struct {
-	data          map[string]entities.UserInfo
+	data          map[uint]entities.UserInfo
 	mu            sync.RWMutex
 	autoIncrement uint
 }
 
 func NewMockUserRepository() *MockUserRepository {
 	return &MockUserRepository{
-		data:          make(map[string]entities.UserInfo),
+		data:          make(map[uint]entities.UserInfo),
 		autoIncrement: 1,
 	}
 }
@@ -27,12 +27,12 @@ func (r *MockUserRepository) Create(user entities.UserInfo) (uint, error) {
 	user.ID = r.autoIncrement
 	r.autoIncrement++
 
-	r.data[user.UUID] = user
+	r.data[user.ID] = user
 
 	return user.ID, nil
 }
 
-func (r *MockUserRepository) FindById(id string) (entities.UserInfo, error) {
+func (r *MockUserRepository) FindById(id uint) (entities.UserInfo, error) {
 	r.mu.RLock()
 	defer r.mu.RUnlock()
 

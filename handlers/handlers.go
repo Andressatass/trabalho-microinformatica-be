@@ -31,7 +31,7 @@ func HandleGetUserInfo(w http.ResponseWriter, r *http.Request, repo repository.M
 		return
 	}
 
-	userData, err := repo.FindById(userEntity.UUID)
+	userData, err := repo.FindById(userEntity.ID)
 	if err != nil {
 		WriteErrorResponse(w, err, http.StatusInternalServerError)
 	}

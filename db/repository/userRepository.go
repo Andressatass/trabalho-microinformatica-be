@@ -27,7 +27,7 @@ func (r UserRepository) Create(user entities.UserInfo) (uint, error) {
 func (r UserRepository) FindById(id string) (entities.UserInfo, error) {
 	var user entities.UserInfo
 
-	result := r.db.Find(&user).Where("uuid = ?", user.UUID)
+	result := r.db.Find(&user).Where("uuid = ?", user.ID)
 	if result.Error != nil {
 		return entities.UserInfo{}, result.Error
 	}
