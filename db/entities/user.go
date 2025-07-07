@@ -9,6 +9,10 @@ type UserInfo struct {
 	Endereco
 }
 
+type Getuserinfo struct {
+	ID uint `gorm:"not null" json:"id"`
+}
+
 type Contato struct {
 	Email    string `gorm:"not null" json:"email"`
 	Telefone string `gorm:"not null" json:"telefone"`

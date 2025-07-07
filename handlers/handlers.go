@@ -16,7 +16,7 @@ type ErrorResponse struct {
 }
 
 func HandleGetUserInfo(w http.ResponseWriter, r *http.Request, repo repository.MockUserRepository) {
-	var userEntity entities.UserInfo
+	var getUserEntity entities.Getuserinfo
 
 	bytes, err := io.ReadAll(r.Body)
 	if err != nil {
@@ -24,14 +24,14 @@ func HandleGetUserInfo(w http.ResponseWriter, r *http.Request, repo repository.M
 		return
 	}
 
-	err = json.Unmarshal([]byte(bytes), &userEntity)
+	err = json.Unmarshal([]byte(bytes), &getUserEntity)
 	if err != nil {
 		WriteErrorResponse(w, err, http.StatusInternalServerError)
 
 		return
 	}
 
-	userData, err := repo.FindById(userEntity.ID)
+	userData, err := repo.FindById(getUserEntity.ID)
 	if err != nil {
 		WriteErrorResponse(w, err, http.StatusInternalServerError)
 	}
