@@ -3,7 +3,7 @@ package handlers
 import (
 	"net/http"
 
-	"github.com/Andressatass/trabalho-microinformatica-be/trabalho-microinformatica-be/db/repository"
+	"github.com/Andressatass/trabalho-microinformatica-be/db/repository"
 )
 
 func RegisterRoutes(repo *repository.MockUserRepository) {

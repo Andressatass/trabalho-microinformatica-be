@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"github.com/Andressatass/trabalho-microinformatica-be/trabalho-microinformatica-be/db/entities"
+	"github.com/Andressatass/trabalho-microinformatica-be/db/entities"
 	"gorm.io/gorm"
 )
 

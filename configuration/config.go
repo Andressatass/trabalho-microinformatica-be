@@ -3,7 +3,7 @@ package configuration
 import (
 	"fmt"
 
-	"github.com/Andressatass/trabalho-microinformatica-be/trabalho-microinformatica-be/app"
+	"github.com/Andressatass/trabalho-microinformatica-be/app"
 	"github.com/iamolegga/enviper"
 	"github.com/spf13/viper"
 )

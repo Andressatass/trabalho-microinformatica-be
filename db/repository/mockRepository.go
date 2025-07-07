@@ -4,7 +4,7 @@ import (
 	"errors"
 	"sync"
 
-	"github.com/Andressatass/trabalho-microinformatica-be/trabalho-microinformatica-be/db/entities"
+	"github.com/Andressatass/trabalho-microinformatica-be/db/entities"
 )
 
 type MockUserRepository struct {

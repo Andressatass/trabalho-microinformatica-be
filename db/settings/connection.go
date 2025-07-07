@@ -3,8 +3,8 @@ package settings
 import (
 	"fmt"
 
-	"github.com/Andressatass/trabalho-microinformatica-be/trabalho-microinformatica-be/configuration"
-	"github.com/Andressatass/trabalho-microinformatica-be/trabalho-microinformatica-be/db/entities"
+	"github.com/Andressatass/trabalho-microinformatica-be/configuration"
+	"github.com/Andressatass/trabalho-microinformatica-be/db/entities"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
